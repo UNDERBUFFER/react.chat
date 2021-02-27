@@ -13,15 +13,15 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// if (true) {
-//   ReactDOM.render(
-//     <React.StrictMode>
-//       <Chater />
-//       <Chater />
-//     </React.StrictMode>,
-//     document.getElementById('level-menu')
-//   );
-// }
+if (true) {
+  ReactDOM.render(
+    <React.StrictMode>
+      <Chater />
+      <Chater />
+    </React.StrictMode>,
+    document.getElementById('level-menu')
+  );
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
