@@ -1,14 +1,13 @@
 import React from 'react';
 
 let style = {
-    chaterBlock: {
+    message: {
         marginTop: '5%',
         width: '100%',
-        height: '10%',
     },
     avatar: {
         height: '100%',
-        width: '25%',
+        width: '10%',
         float: 'left',
         borderRadius: '50%',
         marginLeft: '5%'
@@ -16,23 +15,23 @@ let style = {
     username: {
         height: '50%',
         width: '60%',
-        marginLeft: '35%',
-        color: 'white',
+        marginLeft: '20%',
+        color: 'rgb(115, 182, 242)',
         fontSize: '15px'
     },
-    lastMessage: {
+    messageText: {
         height: '50%',
         width: '60%',
-        marginLeft: '35%',
-        color: 'gray',
+        marginLeft: '20%',
+        color: 'white',
         fontSize: '15px'
     }
 }
 
 export default () => {
-    return <div className="chater" style={style.chaterBlock}> {/* TODO */}
+    return <div className='message' style={style.message}>
         <img className='avatar' src='/favicon.ico' style={style.avatar}></img> {/* TODO */}
         <div className='username' style={style.username}>usermem</div> {/* TODO */}
-        <div className='last-message' style={style.lastMessage}> my message</div> {/* TODO */}
+        <div className='last-message' style={style.messageText}>my messagemy messagemy messagemy messagemy messagemy messagemy messagemy messagemy messagemy messagemy messagemy messagemy message</div> {/* TODO */}
     </div>
 }
