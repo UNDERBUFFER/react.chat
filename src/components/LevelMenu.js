@@ -6,7 +6,8 @@ const style = {
     width: '28.5%',
     borderRight: '1.5vw solid rgb(101, 168, 188)',
     backgroundColor: 'rgb(70, 79, 89)',
-    display: 'inline'
+    display: 'inline',
+    overflowY: 'scroll'
 }
 
 export default () => {

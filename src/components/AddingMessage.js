@@ -5,6 +5,7 @@ const style = {
         width: '90%',
         height: '10%',
         marginLeft: '5%',
+        marginTop: '5%'
     },
     textarea: {
         height: '95%',

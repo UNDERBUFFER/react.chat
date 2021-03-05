@@ -14,6 +14,7 @@ const style = {
     messages: {
         height: '80%',
         width: '100%',
+        overflowY: 'scroll'
     }
 }
 
