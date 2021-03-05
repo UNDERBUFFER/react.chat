@@ -3,14 +3,16 @@ import React from 'react';
 const style = {
     general: {
         width: '90%',
-        height: '15%',
+        height: '10%',
         marginLeft: '5%',
     },
     textarea: {
         height: '95%',
         width: '80%',
         resize: null,
-        fontSize: '50px'
+        fontSize: '25px',
+        backgroundColor: 'rgb(48, 60, 68)',
+        color: 'white',
     },
     submit: {
         marginLeft: '5%',
@@ -19,7 +21,7 @@ const style = {
         width: '13%',
         position: 'relative',
         verticalAlign: 'top',
-        fontSize: '70px',
+        fontSize: '30px',
         backgroundColor: 'rgb(77, 140, 216)',
         color: 'white',
         border: '4px solid rgb(146, 182, 198)',
