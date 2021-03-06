@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AddingMessage from './AddingMessage';
 import MessageList from './MessageList';
+import Message from './Message';
+import { MESSAGE_LIST } from '../events'
 
 let style = {
     chaterBlock: {
@@ -40,6 +42,16 @@ export default (props) => {
                 <AddingMessage />
             </React.StrictMode>,
             document.getElementById('right-area')
+        );
+        const username = props.username
+        const messages = MESSAGE_LIST[username]
+        ReactDOM.render(
+            <React.StrictMode>
+                { messages.map(element => {
+                    return <Message username={element.username} message={element.message}/>
+                }) }
+            </React.StrictMode>,
+            document.getElementById('messages')
         );
     }}>
         <img className='avatar' src='/favicon.ico' style={style.avatar}></img> {/* TODO */}

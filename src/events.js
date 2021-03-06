@@ -4,6 +4,8 @@ import Window from './components/Window';
 import Chater from './components/Chater';
 import { socket } from './utils';
 
+export const MESSAGE_LIST = {}
+
 socket.onmessage = (event => {
     let data = JSON.parse(event.data);
     if (data.status == 'good-connection') {
@@ -13,6 +15,7 @@ socket.onmessage = (event => {
             </React.StrictMode>,
             document.getElementById('root')
         );
+        data.info.forEach( username => MESSAGE_LIST[username] = [] )
         ReactDOM.render(
             <React.StrictMode>
                 { data.info.map( username => <Chater username={username}/> ) }
@@ -20,9 +23,15 @@ socket.onmessage = (event => {
             document.getElementById('level-menu')
         );
     }
-    else {
+    else if (data.status == 'error-connection') {
         const div = document.getElementById('login-error');
         div.innerText = data.info || 'ERROR';
         div.style.color = 'red';
+    }
+    else {
+        if (data.status == 'new-connection')
+            MESSAGE_LIST[data.username] = []
+        else
+            MESSAGE_LIST[data.username].push({username: data.username, message: data.info})
     }
 })

@@ -1,4 +1,5 @@
 import React from 'react';
+import { socket } from '../utils';
 
 const style = {
     general: {
@@ -32,7 +33,15 @@ const style = {
 
 export default () => {
     return <div id='adding-message' style={style.general}>
-        <textarea style={style.textarea}></textarea>
-        <input type="button" style={style.submit} value="❱"/>
+        <textarea style={style.textarea} id="add-text"></textarea>
+        <input type="button" style={style.submit} value="❱" onClick={() => {
+            const div = document.getElementById('add-text')
+            socket.send( JSON.stringify({
+                status: 'new-message',
+                // TODO
+                info: div.value
+            }) )
+            div.value = ''
+        }}/>
     </div>
 }

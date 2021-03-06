@@ -59,10 +59,12 @@ export default () => {
             <div style={style.error} id='login-error'>Enter your name</div>
             <input type='text' style={style.input} placeholder='username' id='enterred-username'/>
             <button style={style.button} id='start-chating' onClick={() => {
+                const username = document.getElementById('enterred-username').value
                 socket.send( JSON.stringify({
-                    status: 'connection',
-                    username: document.getElementById('enterred-username').value
+                    status: 'get-connection',
+                    username
                 }) )
+                localStorage.setItem('username', username)
             }}>SUBMIT</button>
         </div>
     </div>
