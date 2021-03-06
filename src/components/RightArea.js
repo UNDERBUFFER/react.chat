@@ -21,9 +21,9 @@ const style = {
 export default () => {
     return <div id='right-area' style={style.general}>
         <div id='messages' style={style.messages}>
-            <Message /> {/* TODO */}
-            <Message /> {/* TODO */}
+            {/* <Message /> TODO */}
+            {/* <Message /> TODO */}
         </div>
-        <AddingMessage />
+        {/* <AddingMessage /> */}
     </div>
 }
