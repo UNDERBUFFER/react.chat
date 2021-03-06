@@ -11,6 +11,6 @@ const style = {
 }
 
 export default () => {
-    return <div id='level-menu' style={style}>
+    return <div id='left-menu' style={style}>
     </div>
 }

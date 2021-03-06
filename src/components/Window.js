@@ -1,5 +1,5 @@
 import React from 'react';
-import LevelMenu from './LevelMenu';
+import LevelMenu from './LeftMenu';
 import RightArea from './RightArea';
 
 const style = {

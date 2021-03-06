@@ -2,15 +2,32 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Auth from './components/Auth';
-import './events'
+// import Auth from './components/Auth'; TODO
+import Window from './components/Window';
+import Chater from './components/Chater';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Auth />
+      <Window />
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+
+const getRandomInt = (min, max) => Math.round( min + Math.random() * (max - min) );
+const chatersLength = getRandomInt(4, 12);
+const names = ['Bob', 'Fill', 'Nikita', 'Egor', 'George', 'Mem', 'Dasha', 'Tem4k', 'Hacker', 'rofler', 'Physic', 'Clever'];
+const chaters = []
+for( let i = 0; i < chatersLength; i++ ) {
+  chaters.push( names[i] )
+} // TODO
+ReactDOM.render(
+  <React.StrictMode>
+      { chaters.map( i => <Chater username={i}/> ) }
+  </React.StrictMode>,
+  document.getElementById('left-menu')
+); // TODO
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

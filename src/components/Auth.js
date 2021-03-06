@@ -1,5 +1,4 @@
 import React from 'react';
-import { socket } from '../utils';
 
 const style = {
     general: {
@@ -58,14 +57,7 @@ export default () => {
         <div style={style.window}>
             <div style={style.error} id='login-error'>Enter your name</div>
             <input type='text' style={style.input} placeholder='username' id='enterred-username'/>
-            <button style={style.button} id='start-chating' onClick={() => {
-                const username = document.getElementById('enterred-username').value
-                socket.send( JSON.stringify({
-                    status: 'get-connection',
-                    username
-                }) )
-                localStorage.setItem('username', username)
-            }}>SUBMIT</button>
+            <button style={style.button} id='start-chating'>SUBMIT</button>
         </div>
     </div>
 }
