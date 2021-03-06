@@ -28,10 +28,10 @@ let style = {
     }
 }
 
-export default () => {
+export default (props) => {
     return <div className='message' style={style.message}>
         <img className='avatar' src='/favicon.ico' style={style.avatar}></img> {/* TODO */}
-        <div className='username' style={style.username}>usermem</div> {/* TODO */}
-        <div className='last-message' style={style.messageText}>my messagemy messagemy messagemy messagemy messagemy messagemy messagemy messagemy messagemy messagemy messagemy messagemy message</div> {/* TODO */}
+        <div className='username' style={style.username}>{ props.username }</div>
+        <div className='last-message' style={style.messageText}>{ props.message }</div>
     </div>
 }

@@ -10,6 +10,10 @@ WebSocketServer.on("connection", function (ws) {
     console.log('ok')
     ws.on('message', msg => {
         console.log(msg)
+        ws.send(JSON.stringify( {
+            status: 'good-connection',
+            info: ['usermem', 'nikitass']
+        } ))
     })
     ws.on('close', () => {
         console.log('bb')

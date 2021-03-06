@@ -1,4 +1,7 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import AddingMessage from './AddingMessage';
+import MessageList from './MessageList';
 
 let style = {
     chaterBlock: {
@@ -29,10 +32,18 @@ let style = {
     }
 }
 
-export default () => {
-    return <div className="chater" style={style.chaterBlock}> {/* TODO */}
+export default (props) => {
+    return <div className="chater" style={style.chaterBlock} onClick={() => {
+        ReactDOM.render(
+            <React.StrictMode>
+                <MessageList />
+                <AddingMessage />
+            </React.StrictMode>,
+            document.getElementById('right-area')
+        );
+    }}>
         <img className='avatar' src='/favicon.ico' style={style.avatar}></img> {/* TODO */}
-        <div className='username' style={style.username}>usermem</div> {/* TODO */}
-        <div className='last-message' style={style.lastMessage}> my message</div> {/* TODO */}
+        <div className='username' style={style.username}>{props.username}</div>
+        <div className='last-message' style={style.lastMessage}><em>Напишите первым!</em></div>
     </div>
 }
